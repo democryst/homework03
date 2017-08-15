@@ -39,31 +39,27 @@ public class TapActivity extends AppCompatActivity implements View.OnClickListen
         if (v == coin_btn){
             count = count + 1;
 
-//            Toast.makeText(TapActivity.this, "count :"+count+" ,goal :"+goal_val, Toast.LENGTH_LONG).show();
 //            try{
 //                value_text.setText(count+"");
 //            }catch (NullPointerException npe){
 //                Log.d("setText fail", "NullPointerException: "+npe);
+//            }catch (Exception e){
+//                Log.d("Exception", "event : "+e);
 //            }
-            try{
-                value_text.setText(count+"");
-            }catch (NullPointerException npe){
-                Log.d("setText fail", "NullPointerException: "+npe);
-            }catch (Exception e){
-                Log.d("Exception", "event : "+e);
-            }
 
-            if (count == goal_val){
+            if (count > goal_val){
                 count = 0;
                 super.onBackPressed();
+            }else{
+                try{
+                    value_text.setText(count+"");
+                }catch (NullPointerException npe){
+                    Log.d("setText fail", "NullPointerException: "+npe);
+                }catch (Exception e){
+                    Log.d("Exception", "event : "+e);
+                }
             }
 
-//            if (count < goal_val){
-//                value_text.setText(count+"");
-//            }else if(count == goal_val){
-//                count = 0;
-//                super.onBackPressed();
-//            }
         }
 
     }
