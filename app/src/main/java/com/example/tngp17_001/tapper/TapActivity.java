@@ -13,10 +13,9 @@ import java.util.InvalidPropertiesFormatException;
 
 public class TapActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView value_text;
-    ImageButton coin_btn;
+    private TextView value_text;
+    private ImageButton coin_btn;
 
-    Intent intent;
     int goal_val;
     int count = 0;
 
@@ -26,7 +25,7 @@ public class TapActivity extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tap);
 
-        intent = getIntent();
+        Intent intent = getIntent();
         goal_val = intent.getIntExtra("goal_value", 0);
 
         value_text = (TextView)findViewById(R.id.box_in_text);
@@ -38,14 +37,6 @@ public class TapActivity extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         if (v == coin_btn){
             count = count + 1;
-
-//            try{
-//                value_text.setText(count+"");
-//            }catch (NullPointerException npe){
-//                Log.d("setText fail", "NullPointerException: "+npe);
-//            }catch (Exception e){
-//                Log.d("Exception", "event : "+e);
-//            }
 
             if (count > goal_val){
                 count = 0;

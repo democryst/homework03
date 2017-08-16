@@ -18,18 +18,17 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    EditText input_text;
-    ImageView playbtn;
-    int value_f;
-    Intent intent;
+    private EditText input_text;
+    private ImageView playbtn;
+    protected int value_f;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        intent = getIntent();
-        initialize();
 
+        initialize();
 
     }
 
